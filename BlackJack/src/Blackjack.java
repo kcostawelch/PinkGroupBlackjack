@@ -10,16 +10,20 @@ public class Blackjack {
         boolean pos1 = false;
         int num1 = 0, num2 = 0;
         while (!pos1) {
-            System.out.println("Please enter a positive number.");
-            num1 = scanner.nextInt();
-
-            System.out.println("Please enter another positive number.");
-            num2 = scanner.nextInt();
-
-            if (num1 > 0 && num2 > 0) {
-                pos1 = true;
-            } else {
-                System.out.println("Please enter two POSITIVE numbers.");
+            try {
+                System.out.println("Please enter a positive number.");
+                num1 = scanner.nextInt();
+                System.out.println("Please enter another positive number.");
+                num2 = scanner.nextInt();
+                if (num1 > 0 && num2 > 0) {
+                    pos1 = true;
+                } else {
+                    System.out.println("Please enter two POSITIVE numbers.");
+                }
+            }
+            catch (Exception e) {
+                System.out.println("You must enter an integer.");
+                scanner.nextLine();
             }
         }
 
